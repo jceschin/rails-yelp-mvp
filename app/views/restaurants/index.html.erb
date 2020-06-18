@@ -1,7 +1,17 @@
-<h1>Restaurants</h1>
+<div class="banner d-flex">
+  <h1>Restaurants</h1>
+  <p><%= link_to "Add a new restaurant", new_restaurant_path %></p>
+</div>
 
-<% @restaurants.each do |resto| %>
-<p><%= resto.name %></p>
-<%= link_to "Details", restaurant_path(resto) %>
-<% end %>
+<div class="container">
+  <% @restaurants.each do |resto| %>
+  <p><%= resto.name %></p>
+  <p><%= link_to "Details", restaurant_path(resto) %></p>
+  <p><%= link_to "Add review", new_restaurant_review_path(resto) %></p>
+  <% end %>
+</div>
+
+
+
+
 
